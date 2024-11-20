@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="outer">
+        <div id="left">
+            <h1 style="color: red;">Login!!!</h1>
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <input type="text" placeholder="Your Name" id="name">
+                <br>
+                <br>
+                <input type="email" placeholder="Email" id="name">
+                <br>
+                <br>
+                <textarea name="feedback" placeholder="Share Your Thoughts With Us" id="names"></textarea>
+                <br>
+                <br>
+                <br>
+                <button>Send</button>
+                <br>
+                
+                <h4>By pressing the button, you accept <u>Terms and Conditions</u> and acknowledge reading <u>Privacy Policy</u></h4>
+
+            </form>
+        </div>
+        <div id="right">
+            <img src="forest.png" alt=".loading" height="498px" width="400px" id="im">
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.elasticmail.com",
+                Username : "rajarshidixit91@gmail.com",
+                Password : "9E161BF5BC049CD8EE81E286335C03F0601A",
+                To : "rajarshidixit91@gmail.com",
+                From :document.getElementById("name").value,
+                Subject : "New Contact form",
+                Body : "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        }
+
+    </script>
+
+    
+</body>
+</html>
